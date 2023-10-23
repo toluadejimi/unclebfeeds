@@ -321,7 +321,7 @@
     </div>
 
 
-   
+
     <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -462,7 +462,11 @@
                         Bags</h1>
                 </div>
 
+
+                @if($user != null)
+
                     @if($item->qty == 0)
+
 
                     <div class="my-3">
                     <button type="button"
@@ -484,9 +488,12 @@
 
 
 
+                    @if($user == null)
 
+                    <button type="button" data-toggle="modal" data-target="#login"
+                    class="btn btn-outline-primary">Please Login to continue</button>
 
-                    @if($user == 2)
+                    @elseif($user == 2)
                     <button type="submit" data-toggle="modal" data-target="#issue{{ $item->id }}"
                         class="btn btn-primary btn-md mt-2">Receive Stock
                     </button>
