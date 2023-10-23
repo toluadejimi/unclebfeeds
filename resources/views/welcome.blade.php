@@ -463,9 +463,10 @@
                 </div>
 
 
-                    @if($item->qty == 0)
 
+                    {{-- @if($item->qty == 0) --}}
 
+{{-- 
                     <div class="my-3">
                     <button type="button"
                             class="btn btn-danger btn-md mt-2">Low Stock
@@ -474,7 +475,7 @@
                     <button type="button" data-toggle="modal" data-target="#restock{{ $item->id }}"
                         class="btn btn-secondary btn-md mt-2">Restock
                     </button>
-                    </div>
+                    </div> --}}
 
 
                 @else
