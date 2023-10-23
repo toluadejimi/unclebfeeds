@@ -518,7 +518,6 @@
                     @endif
 
                 </div>
-                @endif
 
 
                 <!-- Modal -->
