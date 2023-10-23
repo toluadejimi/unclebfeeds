@@ -463,8 +463,6 @@
                 </div>
 
 
-                @if($user != null)
-
                     @if($item->qty == 0)
 
 
