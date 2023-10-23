@@ -376,7 +376,7 @@
                                 <select class="form-control" name="item" required>
                                     <option>Select Item</option>
                                     @foreach ($items as $item)
-                                    <option value="{{ $item->id }}"> {{ $item->name }} - {{ $item->qty }} Bags </option>
+                                    <option value="{{ $item->id }}"> {{ $item->name }} - {{ $item->qty }} KG </option>
                                     @endforeach
                                 </select>
 
