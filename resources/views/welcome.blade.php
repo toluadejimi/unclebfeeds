@@ -466,7 +466,7 @@
 
                     {{-- @if($item->qty == 0) --}}
 
-{{-- 
+{{--
                     <div class="my-3">
                     <button type="button"
                             class="btn btn-danger btn-md mt-2">Low Stock
@@ -478,7 +478,7 @@
                     </div> --}}
 
 
-                @else
+                {{-- @else --}}
 
 
 
