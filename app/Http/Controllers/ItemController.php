@@ -1484,6 +1484,8 @@ class ItemController extends Controller
                 'fulzyme' => $request->fulzyme,
                 'zerotox' => $request->zerotox,
                 'lprmix' => $request->lprmix,
+                't_binder' => $request->t_binder,
+
 
 
             ]);
