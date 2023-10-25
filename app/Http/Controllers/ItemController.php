@@ -973,15 +973,52 @@ class ItemController extends Controller
             $zerotox = Item::where('id', 20)->first()->qty;
             if ($zerotox < $cm->zerotox) {
 
-
-                $tbinder = Item::where('id', 11)->first()->qty;
+            $tbinder = Item::where('id', 11)->first()->qty;
             if($tbinder < $cm->tbinder) {
-
+                $tbinder = 1;
                 return back()->with('error', 'ZeroTox and Toxin binder is insufficient to produce Broilers Stater');
 
             }
 
             }
+
+
+
+            if ($zerotox > $cm->zerotox) {
+
+                $zerotox = Item::where('id', 20)->decrement('qty', $cm->zerotox);
+
+
+                $balance = Item::where('id', 20)->first()->qty;
+                $trx = new Transaction();
+                $trx->item_id = 20;
+                $trx->issued_qty = $cm->zerotox;
+                $trx->type = 'debit';
+                $trx->balance = $balance;
+                $trx->save();
+    
+
+            }
+
+            if($tbinder > $cm->tbinder) {
+
+
+                $tbinder = Item::where('id', 11)->decrement('qty', $cm->tbinder);
+
+                
+                $balance = Item::where('id', 11)->first()->qty;
+                $trx = new Transaction();
+                $trx->item_id = 11;
+                $trx->issued_qty = $cm->tbinder;
+                $trx->type = 'debit';
+                $trx->balance = $balance;
+                $trx->save();
+    
+
+
+    
+            }
+    
 
 
 
@@ -997,10 +1034,11 @@ class ItemController extends Controller
             $methionine = Item::where('id', 18)->decrement('qty', $cm->methionine);
             $lprmix = Item::where('id', 9)->decrement('qty', $cm->lprmix);
             $fulzyme = Item::where('id', 19)->decrement('qty', $cm->fulzyme);
-            $zerotox = Item::where('id', 20)->decrement('qty', $cm->zerotox);
             $salt = Item::where('id', 12)->decrement('qty', $cm->salt);
 
 
+
+           
 
 
 
