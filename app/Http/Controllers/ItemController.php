@@ -974,12 +974,12 @@ class ItemController extends Controller
             if ($zerotox < $cm->zerotox) {
 
 
-                $t_binder = Item::where('id', 11)->first()->qty;
-if($t_binder < $cm->t_binder) {
+                $tbinder = Item::where('id', 11)->first()->qty;
+            if($tbinder < $cm->tbinder) {
 
-    return back()->with('error', 'ZeroTox and Toxin binder is insufficient to produce Broilers Stater');
+                return back()->with('error', 'ZeroTox and Toxin binder is insufficient to produce Broilers Stater');
 
-}
+            }
 
             }
 
@@ -1496,7 +1496,7 @@ if($t_binder < $cm->t_binder) {
                 'fulzyme' => $request->fulzyme,
                 'zerotox' => $request->zerotox,
                 'lprmix' => $request->lprmix,
-                't_binder' => $request->t_binder,
+                'tbinder' => $request->tbinder,
 
 
 
