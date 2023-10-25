@@ -960,15 +960,31 @@ class ItemController extends Controller
                 return back()->with('error', 'FULZYME is insufficient to produce Broilers Stater');
             }
 
-            $zerotox = Item::where('id', 20)->first()->qty;
-            if ($zerotox < $cm->zerotox) {
-                return back()->with('error', 'ZEROTOX is insufficient to produce Broilers Stater');
-            }
+         
 
 
             $salt = Item::where('id', 12)->first()->qty;
             if ($salt < $cm->salt) {
                 return back()->with('error', 'SALT is insufficient to produce Broilers Stater');
+            }
+
+
+
+            $zerotox = Item::where('id', 20)->first()->qty;
+            if ($zerotox < $cm->zerotox) {
+
+
+                $t_binder = Item::where('id', 11)->first()->qty;
+                if($t_binder < $cm->t_binder){
+
+                    return back()->with('error','ZeroTox and Toxin binder is insufficient to produce Broilers Stater')
+
+                }
+
+
+
+                
+
             }
 
 
