@@ -977,7 +977,7 @@ class ItemController extends Controller
                 $t_binder = Item::where('id', 11)->first()->qty;
                 if($t_binder < $cm->t_binder){
 
-                    return back()->with('error','ZeroTox and Toxin binder is insufficient to produce Broilers Stater')
+                    return back()->with('error','ZeroTox and Toxin binder is insufficient to produce Broilers Stater');
 
                 }
 
